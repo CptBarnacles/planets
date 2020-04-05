@@ -1,0 +1,8 @@
+<%= current_user.name %>  
+
+
+<%= current_user.sponsors do |s| %>
+	@sponsor = Sponsor.find(s.sponsor_id)
+	<%= link_to s.planet.pl_name, @planet %>
+<% end %>
+
