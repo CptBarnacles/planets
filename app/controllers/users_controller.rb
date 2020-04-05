@@ -4,12 +4,17 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.order(:name).page(params[:page])
+    if current_user && current_user.admin
+      @users = User.order(:name).page(params[:page])
+    else
+      @user = User.all
+    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new

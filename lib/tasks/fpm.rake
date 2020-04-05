@@ -47,6 +47,14 @@ namespace :fpm do
       )   
     p "Admin added"
 
+    User.create!(
+      name: "example",
+      email: "example@example.com",
+      password: "example123",
+      admin: false
+      )   
+    p "Guest added"
+
      users = User.all
      planets = Planet.all
 

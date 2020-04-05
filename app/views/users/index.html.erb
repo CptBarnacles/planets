@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
 
-<h2>Users</h2>
 <% if current_user && current_user.admin %>
+  <h2>Users</h2>
   <table class="table table-hover table-dark">
     <thead class="thead-dark">
       <tr>
@@ -28,11 +27,11 @@
       <% end %>
     </tbody>
   </table>
-<%= paginate @users %>
+  <%= paginate @users %>
+  <%= line_chart User.group_by_day(:created_at).count %>
 <% else %>
-  <% link_to 'Back', root_url %>
+
 <% end %>
-<br>
-<%= link_to 'Create an account', new_user_path %>
-<br>
-<%= line_chart User.group_by_day(:created_at).count %>
+<%= link_to 'Back', root_url %>
+
+

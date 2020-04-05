@@ -28,8 +28,8 @@
   <%= bar_chart Sponsor.group_by_day(:created_at).count %>
 
 <% elsif current_user %>
-  <h2> My Planets </h2>
- 
+  <h2> <%= current_user.name %>'s Planets </h2>
+  <br>
 <%= render :partial => 'layouts/gensponsor' %>
 <% else %>
   <% redirect_to planets_path %>

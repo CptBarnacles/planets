@@ -65,12 +65,13 @@
   
 
   <h2 style="padding-bottom: 25px;padding-left:350px;width:50%">Sponsors</h2>
-  <p>These are the people who have shown an interest in <%= @planet.pl_name %>. Those who are payed sponsors are highlighted to show their ultimate appreciation for the future research into this new planet.<p>
+  <p>These are the people who have shown an interest in <%= @planet.pl_name %>. Those who are payed sponsors are highlighted to show their appreciation for the future research into this new planet.<p>
   <ul class="list-group">
    <li class="list-group item list-group-item-primary" style="padding-bottom: 25px;width:50%">
     <% @planet.sponsors.each do |spon|
       @user = User.find(spon.user_id) %>
-    <%= spon.first_name %> <%= spon.last_name %>(<%= @user.email %>) <%=spon.created_at %> <p>
+      <%= link_to spon.first_name, userp_url(:id => spon.user_id) %>
+      <%= spon.last_name %>(<%= @user.email %>) <%=spon.created_at %> <p>
     <% end %> 
     </li>
   </ul>

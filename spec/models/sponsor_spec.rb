@@ -2,13 +2,14 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do 
 	context 'validates correctly' do 
-		it 'ensures email presence' do
-			user = User.new(email: 'example@example.com').save
-			expect(user).to eq(false)
+		it 'ensures Sponsor presence' do
+			Sponsor = Sponsor.new(first_name: 'example').save
+			expect(Sponsor).to eq(false)
 		end
 
-		it 'ensures password is present' do
-			params = double(:params, password: 'password', password_confirmation: 'password')
+		it 'dependants are there' do
+			User = User.find(params[:user_id])
+			Planet = Planet.find(params[:planet_id])
 		end
 	end
 

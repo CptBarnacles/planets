@@ -10,9 +10,7 @@
       </ul>
     </div>
   <% end %>
-<% if current_user && !current_user.admin %>  
-  <h3> Enter your details to create your free User account: </h3>
-<% end %>
+  
 <div class="form-group" style="max-width: 40%">
   <form>
     <div class="field">
@@ -34,6 +32,12 @@
       <%= form.label:password_confirmation, "Confirmation" %>
       <%= form.password_field:password_confirmation, class: "form-control"%>
     </div>
+
+    <div class="field">
+      <%= form.label :bio, "Bio" %>
+      <%= form.text_field :bio, style: "height:200px;width:500px" %>
+    </div>
+
     <br>
     <div class="actions">
       <%= form.submit "Submit", class: "btn btn-dark" %>
@@ -41,4 +45,3 @@
     <br>
   <% end %>
   </form>
-</div>

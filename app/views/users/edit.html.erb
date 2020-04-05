@@ -1,4 +1,8 @@
-<h1>Editing User</h1>
+<% if !current_user %>  
+  <h3> Enter your details to create your free User account: </h3>
+<% else %>
+  <h3> Editing <%= @user.name %> </h3>
+<% end %>
 
 <%= render 'form', user: @user %>
 
