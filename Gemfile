@@ -40,7 +40,7 @@ gem 'jquery-rails'
 # gem 'capistrano-rails', group: :development
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'sqlite3'
+
 
 group :production do 
   gem 'pg'
