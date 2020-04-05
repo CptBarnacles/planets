@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'users#show', as: 'userp'
   get 'users/edit', to: 'users#edit'
   resources :planets
-  devise_for :user
+  #devise_for :user
   root 'planets#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
